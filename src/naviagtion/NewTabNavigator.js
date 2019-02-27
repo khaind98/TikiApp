@@ -8,11 +8,21 @@ import {
 class NewTabNavigator extends Component {
   render() {
     return (
-      <View>
-
+      <View style={style.View}>
+        <View>
+        </View>
+        <View>
+        </View>
       </View>
     );
   }
 }
+
+const style = StyleSheet.create({
+    View: {
+      flex: 1,
+      backgroundColor: 'rgb(240, 240, 245)',
+    },
+});
 
 export default NewTabNavigator;
