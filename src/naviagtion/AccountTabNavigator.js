@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import {
   View,
   Text,
-  StyleSheet,
-  FlatList
+  StyleSheet
 } from 'react-native';
 import {
   createAppContainer,
@@ -13,19 +12,25 @@ import {
 class MyAccount extends Component {
   render() {
     return (
-      <Text style={{marginLeft: -100, color:'#ffffff', fontSize: 17,justifyContent: 'flex-start',flexDirection: 'row',}}>
-        My Account
-      </Text>
+      <View>
+        <Text style={{
+          marginLeft: -100,
+          color: '#ffffff',
+          fontSize: 17,
+          justifyContent: 'flex-start',
+          flexDirection: 'row',
+        }}>
+          My Account
+        </Text>
+      </View>
     );
   }
 }
-
 
 class AccountTabNavigator extends Component {
   static navigationOptions = {
     headerTitle: <MyAccount/>,
   };
-
   render() {
     return (
       <View style={style.View}>
@@ -60,8 +65,9 @@ const style = StyleSheet.create({
     flex: 1,
     backgroundColor: 'rgb(240, 240, 245)',
   },
-
-
+  StatusBar: {
+    backgroundColor: '#3385ff',
+  }
 });
 
 export default createAppContainer(StackNavigator);

@@ -11,10 +11,14 @@ class AuthLoadingScreen extends Component {
     super(props);
     this._bootstrapAsync();
   }
-
   _bootstrapAsync = async () => {
-    const userToken = await fetch('https://coolguruji-youtube-to-mp3-download-v1.p.rapidapi.com/?id=lF-jPBnZ098');
-    this.props.navigation.navigate('MainTabNavigator');
+    try {
+      const userToken = await fetch('https://coolguruji-youtube-to-mp3-download-v1.p.rapidapi.com/?id=lF-jPBnZ098');
+      this.props.navigation.navigate('MainTabNavigator');
+    }
+    catch{
+      this.props.navigation.navigate('MainTabNavigator');
+    }
   };
 
   render() {
